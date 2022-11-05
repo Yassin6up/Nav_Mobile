@@ -1,0 +1,139 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--clr)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr:#0A1416;
+}
+
+.navigation {
+    display: flex;
+    position: relative;
+    width: 400px;
+    height: 70px;
+    background-color: white;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation ul {
+    display: flex;
+    width: 350px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 500;
+    width: 100%
+}
+
+.navigation ul li a .icon {
+    font-weight: 500;
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr)
+}
+
+.navigation ul li.active a .icon {
+    color: white;
+    transform: translateY(-35px);
+}
+
+.navigation ul li a .text {
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 0.75em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px)
+}
+
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.indicator {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: #00A59E;
+    border-radius: 50%;
+    top: -40px;
+    border: 6px solid var(--clr);
+    transition: 0.5s;
+}
+
+.indicator:before {
+    content: "";
+    position: absolute;
+    top: 60%;
+
+    left: -19px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr)
+}
+
+.indicator:after {
+    content: "";
+    position: absolute;
+    top: 60%;
+    right: -21px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr)
+}
+
+.navigation ul li:nth-child(1).active .indicator {
+    transform: translateX(0px)
+}
+
+.navigation ul li:nth-child(2).active .indicator {
+    transform: translateX(calc(70px * 1))
+}
+
+.navigation ul li:nth-child(3).active .indicator {
+    transform: translateX(140px)
+}
+
+.navigation ul li:nth-child(4).active .indicator {
+    transform: translateX(210px)
+}
+
+.navigation ul li:nth-child(5).active .indicator {
+    transform: translateX(calc(70px * 4))
+}
